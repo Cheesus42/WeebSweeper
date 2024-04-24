@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd30fpu8b3364"]
+
+[ext_resource type="Script" path="res://RotationPoint.gd" id="1_nbyj8"]
+[ext_resource type="Texture2D" uid="uid://c4o8qqhigwnvo" path="res://Sprite-0001-Sheet.png" id="2_p67y6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ativ"]
+size = Vector2(6, 29)
+
+[node name="RotationPoint" type="Node2D"]
+script = ExtResource("1_nbyj8")
+sword_offset = 125
+
+[node name="Sword" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sword"]
+texture_filter = 1
+texture = ExtResource("2_p67y6")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_8ativ")

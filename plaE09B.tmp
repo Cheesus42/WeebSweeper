@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_4vdju"]
 [ext_resource type="Texture2D" uid="uid://d32mqrtce46kg" path="res://icon.svg" id="1_yeue8"]
-[ext_resource type="PackedScene" uid="uid://bd30fpu8b3364" path="res://Sword.tscn" id="3_mxokh"]
+[ext_resource type="PackedScene" uid="uid://dm66nxj0g6flx" path="res://Weapon.tscn" id="3_whnhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3sqh"]
 size = Vector2(113, 114)
@@ -30,4 +30,4 @@ shape = SubResource("RectangleShape2D_l3sqh")
 sprite_frames = SubResource("SpriteFrames_dt47t")
 animation = &"Platzhalter"
 
-[node name="RotationPoint" parent="." instance=ExtResource("3_mxokh")]
+[node name="Schwert" parent="." instance=ExtResource("3_whnhu")]
