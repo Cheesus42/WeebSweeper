@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dong6cmu7tv1v"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_4vdju"]
+[ext_resource type="Texture2D" uid="uid://d32mqrtce46kg" path="res://icon.svg" id="1_yeue8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3sqh"]
+size = Vector2(113, 114)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt47t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yeue8")
+}],
+"loop": true,
+"name": &"Platzhalter",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_4vdju")
+speed = 600
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_l3sqh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dt47t")
+animation = &"Platzhalter"
+
+[node name="Camera2D" type="Camera2D" parent="."]
