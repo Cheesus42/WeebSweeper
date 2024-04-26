@@ -34,5 +34,6 @@ animation = &"Platzhalter"
 [node name="RotationPoint" parent="." instance=ExtResource("3_mxokh")]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
