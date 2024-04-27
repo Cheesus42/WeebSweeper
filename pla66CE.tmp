@@ -31,6 +31,8 @@ shape = SubResource("RectangleShape2D_l3sqh")
 sprite_frames = SubResource("SpriteFrames_dt47t")
 animation = &"Platzhalter"
 
+[node name="RotationPoint" parent="." instance=ExtResource("3_mxokh")]
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 

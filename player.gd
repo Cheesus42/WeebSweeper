@@ -1,7 +1,7 @@
 extends Area2D
 @export var sword_scene: PackedScene
 @export var speed = 400
-var count = 6.0
+var count = 3.0
 var arr = {}
 
 func _ready():
@@ -26,24 +26,23 @@ func movement(delta):
 	position += velocity * delta
 	
 func spawn_sword():
-		#if i > 0:
-			#for j in range(i):
-				#arr[(i-1)].rotation += (2*PI)/count
-		#arr[i] = sword_scene.instantiate()
-		#add_child(arr[i])
+	
 	for i in range(count):
 		arr[i] = sword_scene.instantiate()
-		arr[i].rotation = (2*PI) * ((count-i)/count)
+		arr[i].rotation = (TAU/count) * (count-i)
 		add_child(arr[i])
+	
 
 func add_sword():
 	count += 1
 	arr[arr.size()] = sword_scene.instantiate()
 	print(arr.size())
 	for i in range(count):
-		arr[i].rotation = (2*PI) * (((count)-i)/(count))
-	add_child(arr[arr.size()-1])
+		arr[i].rotation = (TAU/count) * (count-i)
+		add_child(arr[arr.size()-1])
+	print(arr)
 
 
 func _on_timer_timeout():
-	add_sword()
+	pass#add_sword()
+	
