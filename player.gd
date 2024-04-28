@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 @export var sword_scene: PackedScene
 @export var speed = 400
 var count = 3.0
@@ -8,8 +8,11 @@ func _ready():
 	spawn_sword()
 	$Timer.start()
 	
-func _process(delta):
+func _physics_process(delta):
 	movement(delta)
+	
+func _process(delta):
+	pass
 
 func movement(delta):
 	var direction = Vector2.ZERO
@@ -26,7 +29,6 @@ func movement(delta):
 	position += velocity * delta
 	
 func spawn_sword():
-	
 	for i in range(count):
 		arr[i] = sword_scene.instantiate()
 		arr[i].rotation = (TAU/count) * (count-i)
