@@ -18,7 +18,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4vdju")
 sword_scene = ExtResource("3_mxokh")
 speed = 600
@@ -30,8 +30,6 @@ shape = SubResource("RectangleShape2D_l3sqh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dt47t")
 animation = &"Platzhalter"
-
-[node name="RotationPoint" parent="." instance=ExtResource("3_mxokh")]
 
 [node name="Timer" type="Timer" parent="."]
 
